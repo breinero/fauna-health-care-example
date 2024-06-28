@@ -6,8 +6,8 @@ collection Patient {
   address: {
     street: String,
     city: String,
-    state_provence: String,
-    postCode: Number | String,
+    state_provence: String?,
+    postCode: Number | String | Null,
     country: String
   }
 
@@ -22,8 +22,8 @@ collection Practitioner {
   address: {
     street: String,
     city: String,
-    state_provence: String,
-    postCode: Number | String,
+    state_provence: String?,
+    postCode: Number | String | Null,
     country: String
   }
 
@@ -35,8 +35,8 @@ collection Insurer {
   address: {
     street: String,
     city: String,
-    state_provence: String,
-    postCode: Number | String,
+    state_provence: String?,
+    postCode: Number | String | Null,
     country: String
   }
 
