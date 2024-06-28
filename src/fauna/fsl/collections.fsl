@@ -1,0 +1,81 @@
+collection Patient {
+  name: {
+    last: String,
+    first: String
+  }
+  address: {
+    street: String,
+    city: String,
+    state_provence: String,
+    postCode: Number | String,
+    country: String
+  }
+
+  history_days 0  
+}
+
+collection Practitioner {
+  name: {
+    last: String,
+    first: String
+  }
+  address: {
+    street: String,
+    city: String,
+    state_provence: String,
+    postCode: Number | String,
+    country: String
+  }
+
+  history_days 0
+}
+
+collection Insurer {
+  name: String
+  address: {
+    street: String,
+    city: String,
+    state_provence: String,
+    postCode: Number | String,
+    country: String
+  }
+
+  history_days 0
+}
+
+collection Record { 
+  patient: Ref<Patient>
+  practitioner: Ref<Practitioner>
+  name: String
+  description: String
+
+  history_days 0
+
+  index byPatient { 
+    terms [ .patient ] 
+  }
+}
+
+collection Bill { 
+  history_days 0
+}
+
+collection Consent {
+  history_days 0
+
+  unique [ .record, .grantee ]
+  unique [ .type, .grantee ]
+  unique [ .type, .patient, .grantee ]
+
+  index byRecordAndGrantee {
+    terms [ .record, .grantee ]
+  }
+
+  index byTypeAndGrantee {
+    terms [ .type, .grantee ]
+  }
+
+  index byConsentTypePatientAndGrantee {
+    terms [ .type, .patient, .grantee ]
+  }
+}

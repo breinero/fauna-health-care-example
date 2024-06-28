@@ -1,0 +1,55 @@
+
+role Patient {
+
+  membership Patient 
+
+  privileges Record {
+    // may read thier own medical records but not alter them
+    read {
+      predicate (
+        (record) => { record.patient == Query.identity() }
+      )
+    }
+  }
+
+  privileges Bill {
+    // may read thier own bills but not alter them
+    read {
+      predicate (
+        (record) => { record.patient == Query.identity() }
+      )
+    }
+  }
+
+  privileges Consent {
+    
+    // A patient may create, update, or delete a consent
+    create {
+      predicate (
+        (record) => { record.patient == Query.identity() }
+      )
+    }
+
+    read {
+      predicate (
+        (record) => { record.patient == Query.identity() }
+      )
+    }
+
+    write {
+      predicate (
+        (oldData, newData, record) => {
+          record.patient == Query.identity()  
+        }
+      )
+    }
+
+    delete {
+      predicate (
+        (record) => {
+          record.patient == Query.identity()  
+        }
+      ) 
+    }
+  }
+}

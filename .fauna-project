@@ -1,0 +1,14 @@
+schema_directory=src/fauna/fsl
+default=dev
+
+[environment.test]
+endpoint=HumanaPreview
+database=dev
+
+[environment.dev]
+endpoint=Health_Care_Demo
+database=development
+
+[environment.prod]
+endpoint=Health_Care_Demo
+database=production

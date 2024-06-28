@@ -1,0 +1,51 @@
+This health care example application has the following three main components
+
+* Data Model
+
+EHR (electronic health record)
+- A document that descibes a procedure applied to a Patient, by a Practitioner
+
+Patient 
+- A patient in the system for whom EHRs are created
+
+Practioner
+- A doctor, for example, who administered an examination, treatement, or procedure as recorded in an EHR 
+
+Insurer
+- A health management organization who handles bills
+
+Consent
+- Docuement, created by a Patient to give either a Practitioner or Insurer access to a specfic EH
+
+
+* Requirements
+- Patients may grant or revoke access to EHRs on demand
+-- Patients may only control access to an EHR where they are the Patient
+-- Patients can control access per EHR, per Practitioner or Insurer 
+-- Patient can read all records where they are the patient
+--- Patients can't modify EHRs
+
+- Practioners
+-- May only access EHRs when the Patient has granted access 
+-- Practitioners may only create EHRs for patients they have current practitioner status
+-- A practitioner can CRUD records of type procedure or bill 
+
+- Insurer 
+-- can read any records 
+
+
+TODO
+
+
+When a new patient is created in the system, a set of new consents are added that are assigned to the patient.
+
+
+*** Administration of Enterprise Consent Standard
+The management of all the consents for each individual in an organization
+
+*** Consent Standards Adherence Support
+The set of regulatory requirements by state, or even nation. This is the model by which a patient's current consent set is compared, and how unmet consent requirements are identified.
+
+*** Monitoring and Impact Reporting
+When a consent changes this system reports what access to data has changed and for who it has changed.
+

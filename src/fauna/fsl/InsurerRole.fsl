@@ -1,0 +1,29 @@
+role Insurer {
+
+  membership Insurer
+
+  privileges Record {
+    // an insurer can read medical records only if the patient has given
+    // consent for that particular record   
+    read {
+      predicate (
+        (record) => {
+          Consent.byRecordAndGrantee(record, Query.identity()).first() != null
+        }
+      )
+    }
+  }
+
+  privileges Bill { 
+
+    // an insurer can read bills only if the patient has given consent
+    // for that particular record   
+    read {
+      predicate (
+        (bill) => {
+          Consent.byRecordAndGrantee(bill, Query.identity()).first() != null
+        }
+      )
+    }
+  }
+}
