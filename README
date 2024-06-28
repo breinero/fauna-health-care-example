@@ -1,21 +1,22 @@
 This health care example application has the following three main components
 
 * Data Model
+This application's data model is fully described in fauna schema language files, located in the path ./src/fauna/fsl
 
-EHR (electronic health record)
-- A document that descibes a procedure applied to a Patient, by a Practitioner
+** EHR (electronic health record)
+A document that descibes a procedure applied to a Patient, by a Practitioner
 
-Patient 
-- A patient in the system for whom EHRs are created
+** Patient 
+A patient in the system for whom EHRs are created
 
-Practioner
-- A doctor, for example, who administered an examination, treatement, or procedure as recorded in an EHR 
+** Practioner
+A doctor, for example, who administered an examination, treatement, or procedure as recorded in an EHR 
 
-Insurer
-- A health management organization who handles bills
+** Insurer
+A health management organization who handles bills
 
-Consent
-- Docuement, created by a Patient to give either a Practitioner or Insurer access to a specfic EHR
+** Consent
+Docuement, created by a Patient to give either a Practitioner or Insurer access to a specfic EHR
 
 
 * Requirements
@@ -36,6 +37,7 @@ Consent
 Demo Dataset 
 A small sample dataset is located in assets/demo_data. To load use the Fauna CLI to load this data set 
 
+From the terminal run
 ```
 fauna import --path ./assets/demo_dataset --endpoint=Health_Care_Demo --environment development
 ```
