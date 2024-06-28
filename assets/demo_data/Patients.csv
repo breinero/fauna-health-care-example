@@ -1,0 +1,113 @@
+customerNumber,contactLastName,contactFirstName,street,city,state,zip,country
+103,Schmitt,Carine ,"54, rue Royale",Nantes,NULL,44000,France
+112,King,Jean,8489 Strong St.,Las Vegas,NV,83030,USA
+114,Ferguson,Peter,636 St Kilda Road,Melbourne,Victoria,3004,Australia
+119,Labrune,Janine ,"67, rue des Cinquante Otages",Nantes,NULL,44000,France
+121,Bergulfsen,Jonas ,Erling Skakkes gate 78,Stavern,NULL,4110,Norway
+124,Nelson,Susan,5677 Strong St.,San Rafael,CA,97562,USA
+125,Piestrzeniewicz,Zbyszek ,ul. Filtrowa 68,Warszawa,NULL,01-012,Poland
+128,Keitel,Roland,Lyonerstr. 34,Frankfurt,NULL,60528,Germany
+129,Murphy,Julie,5557 North Pendale Street,San Francisco,CA,94217,USA
+131,Lee,Kwai,897 Long Airport Avenue,NYC,NY,10022,USA
+141,Freyre,Diego ,"C/ Moralzarzal, 86",Madrid,NULL,28034,Spain
+144,Berglund,Christina ,Berguvsvägen  8,Luleå,NULL,S-958 22,Sweden
+145,Petersen,Jytte ,Vinbæltet 34,Kobenhavn,NULL,1734,Denmark
+146,Saveley,Mary ,"2, rue du Commerce",Lyon,NULL,69004,France
+148,Natividad,Eric,Bronz Sok.,Singapore,NULL,79903,Singapore
+151,Young,Jeff,4092 Furth Circle,NYC,NY,10022,USA
+157,Leong,Kelvin,7586 Pompton St.,Allentown,PA,70267,USA
+161,Hashimoto,Juri,9408 Furth Circle,Burlingame,CA,94217,USA
+166,Victorino,Wendy,106 Linden Road Sandown,Singapore,NULL,69045,Singapore
+167,Oeztan,Veysel,Brehmen St. 121,Bergen,NULL,N 5804,Norway  
+168,Franco,Keith,149 Spinnaker Dr.,New Haven,CT,97823,USA
+169,de Castro,Isabel ,Estrada da saúde n. 58,Lisboa,NULL,1756,Portugal
+171,Rancé,Martine ,"184, chaussée de Tournai",Lille,NULL,59000,France
+172,Bertrand,Marie,"265, boulevard Charonne",Paris,NULL,75012,France
+173,Tseng,Jerry,4658 Baden Av.,Cambridge,MA,51247,USA
+175,King,Julie,25593 South Bay Ln.,Bridgewater,CT,97562,USA
+177,Kentary,Mory,1-6-20 Dojima,Kita-ku,Osaka, 530-0003,Japan
+181,Frick,Michael,2678 Kingston Rd.,NYC,NY,10022,USA
+186,Karttunen,Matti,Keskuskatu 45,Helsinki,NULL,21240,Finland
+187,Ashworth,Rachel,Fauntleroy Circus,Manchester,NULL,EC2 5NT,UK
+189,Cassidy,Dean,25 Maiden Lane,Dublin,NULL,2,Ireland
+198,Taylor,Leslie,16780 Pompton St.,Brickhaven,MA,58339,USA
+201,Devon,Elizabeth,"12, Berkeley Gardens Blvd",Liverpool,NULL,WX1 6LT,UK
+202,Tamuri,Yoshi ,1900 Oak St.,Vancouver,BC,V3F 2K1,Canada
+204,Barajas,Miguel,7635 Spinnaker Dr.,Brickhaven,MA,58339,USA
+205,Young,Julie,78934 Hillside Dr.,Pasadena,CA,90003,USA
+206,Walker,Brydey,Suntec Tower Three,Singapore,NULL,38988,Singapore
+209,Citeaux,Frédérique ,"24, place Kléber",Strasbourg,NULL,67000,France
+211,Gao,Mike,Bank of China Tower,Central Hong Kong,NULL,NULL,Hong Kong
+216,Saavedra,Eduardo ,"Rambla de Cataluña, 23",Barcelona,NULL,8022,Spain
+219,Young,Mary,4097 Douglas Av.,Glendale,CA,92561,USA
+223,Kloss,Horst ,Taucherstraße 10,Cunewalde,NULL,1307,Germany
+227,Ibsen,Palle,Smagsloget 45,Århus,NULL,8200,Denmark
+233,Fresnière,Jean ,43 rue St. Laurent,Montréal,Québec,H1J 1C3,Canada
+237,Camino,Alejandra ,"Gran Vía, 1",Madrid,NULL,28001,Spain
+239,Thompson,Valarie,361 Furth Circle,San Diego,CA,91217,USA
+240,Bennett,Helen ,Garden House,Cowes,Isle of Wight,PO31 7PJ,UK
+242,Roulet,Annette ,1 rue Alsace-Lorraine,Toulouse,NULL,31000,France
+247,Messner,Renate ,Magazinweg 7,Frankfurt,NULL,60528,Germany
+249,Accorti,Paolo ,Via Monte Bianco 34,Torino,NULL,10100,Italy
+250,Da Silva,Daniel,27 rue du Colonel Pierre Avia,Paris,NULL,75508,France
+256,Tonini,Daniel ,"67, avenue de l'Europe",Versailles,NULL,78000,France
+259,Pfalzheim,Henriette ,Mehrheimerstr. 369,Köln,NULL,50739,Germany
+260,Lincoln,Elizabeth ,23 Tsawassen Blvd.,Tsawassen,BC,T2F 8M4,Canada
+273,Franken,Peter ,Berliner Platz 43,München,NULL,80805,Germany
+276,OsHara,Anna,201 Miller Street,North Sydney,NSW,2060,Australia
+278,Rovelli,Giovanni ,Via Ludovico il Moro 22,Bergamo,NULL,24100,Italy
+282,Huxley,Adrian,Monitor Money Building,Chatswood,NSW,2067,Australia
+286,Hernandez,Marta,39323 Spinnaker Dr.,Cambridge,MA,51247,USA
+293,Harrison,Ed,Rte des Arsenaux 41 ,Fribourg,NULL,1700,Switzerland
+298,Holz,Mihael,Grenzacherweg 237,Genève,NULL,1203,Switzerland
+299,Klaeboe,Jan,Drammensveien 126A,Oslo,NULL,N 0106,Norway  
+303,Schuyler,Bradley,Kingsfordweg 151,Amsterdam,NULL,1043 GR,Netherlands
+307,Andersen,Mel,Obere Str. 57,Berlin,NULL,12209,Germany
+311,Koskitalo,Pirkko,Torikatu 38,Oulu,NULL,90110,Finland
+314,Dewey,Catherine ,Rue Joseph-Bens 532,Bruxelles,NULL,B-1180,Belgium
+319,Frick,Steve,3758 North Pendale Street,White Plains,NY,24067,USA
+320,Huang,Wing,4575 Hillside Dr.,New Bedford,MA,50553,USA
+321,Brown,Julie,7734 Strong St.,San Francisco,CA,94217,USA
+323,Graham,Mike,162-164 Grafton Road,Auckland  ,NULL,NULL,New Zealand
+324,Brown,Ann ,35 King George,London,NULL,WX3 6FW,UK
+328,Brown,William,7476 Moss Rd.,Newark,NJ,94019,USA
+333,Calaghan,Ben,31 Duncan St. West End,South Brisbane,Queensland,4101,Australia
+334,Suominen,Kalle,Software Engineering Center,Espoo,NULL,FIN-02271,Finland
+335,Cramer,Philip ,Maubelstr. 90,Brandenburg,NULL,14776,Germany
+339,Cervantes,Francisca,782 First Street,Philadelphia,PA,71270,USA
+344,Fernandez,Jesus,Merchants House,Madrid,NULL,28023,Spain
+347,Chandler,Brian,6047 Douglas Av.,Los Angeles,CA,91003,USA
+348,McKenna,Patricia ,8 Johnstown Road,Cork,Co. Cork,NULL,Ireland
+350,Lebihan,Laurence ,"12, rue des Bouchers",Marseille,NULL,13008,France
+353,Henriot,Paul ,59 rue de l'Abbaye,Reims,NULL,51100,France
+356,Kuger,Armand,1250 Pretorius Street,Hatfield,Pretoria,28,South Africa
+357,MacKinlay,Wales,199 Great North Road,Auckland,NULL,NULL,New Zealand
+361,Josephs,Karin,Luisenstr. 48,Münster,NULL,44087,Germany
+362,Yoshido,Juri,8616 Spinnaker Dr.,Boston,MA,51003,USA
+363,Young,Dorothy,2304 Long Airport Avenue,Nashua,NH,62005,USA
+369,Rodriguez,Lino ,Jardim das rosas n. 32,Lisboa,NULL,1675,Portugal
+376,Urs,Braun,Hauptstr. 29,Bern,NULL,3012,Switzerland
+379,Nelson,Allen,7825 Douglas Av.,Brickhaven,MA,58339,USA
+381,Cartrain,Pascale ,"Boulevard Tirou, 255",Charleroi,NULL,B-6000,Belgium
+382,Pipps,Georg ,Geislweg 14,Salzburg,NULL,5020,Austria
+385,Cruz,Arnold,15 McCallum Street,Makati City,NULL,1227 MM,Philippines
+386,Moroni,Maurizio ,Strada Provinciale 124,Reggio Emilia,NULL,42100,Italy
+398,Shimamura,Akiko,2-2-8 Roppongi,Minato-ku,Tokyo,106-0032,Japan
+406,Perrier,Dominique,"25, rue Lauriston",Paris,NULL,75016,France
+409,Müller,Rita ,Adenauerallee 900,Stuttgart,NULL,70563,Germany
+412,McRoy,Sarah,101 Lambton Quay,Wellington,NULL,NULL,New Zealand
+415,Donnermeyer,Michael,Hansastr. 15,Munich,NULL,80686,Germany
+424,Hernandez,Maria,5905 Pompton St.,NYC,NY,10022,USA
+443,Feuer,Alexander ,Heerstr. 22,Leipzig,NULL,4179,Germany
+447,Lewis,Dan,2440 Pompton St.,Glendale,CT,97561,USA
+448,Larsson,Martha,Åkergatan 24,Bräcke,NULL,S-844 67,Sweden
+450,Frick,Sue,3086 Ingle Ln.,San Jose,CA,94217,USA
+452,Mendel,Roland ,Kirchgasse 6,Graz,NULL,8010,Austria
+455,Murphy,Leslie,567 North Pendale Street,New Haven,CT,97823,USA
+456,Choi,Yu,5290 North Pendale Street,NYC,NY,10022,USA
+458,Sommer,Martín ,"C/ Araquil, 67",Madrid,NULL,28023,Spain
+459,Ottlieb,Sven ,Walserweg 21,Aachen,NULL,52066,Germany
+462,Benitez,Violeta,1785 First Street,New Bedford,MA,50553,USA
+465,Anton,Carmen,"c/ Gobelas, 19-1 Urb. La Florida",Madrid,NULL,28023,Spain
+471,Clenahan,Sean,7 Allen Street,Glen Waverly,Victoria,3150,Australia
+473,Ricotti,Franco,20093 Cologno Monzese,Milan,NULL,NULL,Italy

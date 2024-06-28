@@ -15,7 +15,7 @@ Insurer
 - A health management organization who handles bills
 
 Consent
-- Docuement, created by a Patient to give either a Practitioner or Insurer access to a specfic EH
+- Docuement, created by a Patient to give either a Practitioner or Insurer access to a specfic EHR
 
 
 * Requirements
@@ -31,21 +31,11 @@ Consent
 -- A practitioner can CRUD records of type procedure or bill 
 
 - Insurer 
--- can read any records 
+-- can read any records
 
+Demo Dataset 
+A small sample dataset is located in assets/demo_data. To load use the Fauna CLI to load this data set 
 
-TODO
-
-
-When a new patient is created in the system, a set of new consents are added that are assigned to the patient.
-
-
-*** Administration of Enterprise Consent Standard
-The management of all the consents for each individual in an organization
-
-*** Consent Standards Adherence Support
-The set of regulatory requirements by state, or even nation. This is the model by which a patient's current consent set is compared, and how unmet consent requirements are identified.
-
-*** Monitoring and Impact Reporting
-When a consent changes this system reports what access to data has changed and for who it has changed.
-
+```
+fauna import --path ./assets/demo_dataset --endpoint=Health_Care_Demo --environment development
+```
