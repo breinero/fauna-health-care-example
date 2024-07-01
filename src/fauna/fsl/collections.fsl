@@ -31,12 +31,18 @@ collection Practitioner {
     country: String
   }
   facility: Ref<Facility>
+  badgedIn: Boolean = true
 
   index byLastAndFirstName {
      terms [ .name.last, .name.first ]
   }
   
   history_days 0
+
+  migrations {
+    add .badgedIn
+    backfill .badgedIn = true
+  }
 }
 
 collection Researcher {
@@ -52,6 +58,7 @@ collection Researcher {
     country: String
   }
   facility: Ref<Facility>
+  badgedIn: Boolean = true
 
   index byLastAndFirstName {
      terms [ .name.last, .name.first ]
@@ -61,6 +68,8 @@ collection Researcher {
 
   migrations {
     add .facility
+    add .badgedIn
+    backfill .badgedIn = true
   }
 }
 
