@@ -19,17 +19,27 @@ let jean_king = Patient.byLastAndFirstName( "King", "Jean").first()
 Credentials.byDocument(jean_king).login("changeme")
 
 // Patient adds consent for records to Drake Research
+let patient = Query.identity()
 let drake = Facility.firstWhere( .name == "Drake Research" )
-Record.byPatient(patientA).forEach(
-  r => { Consent.create({ record: r, patient: patientA, facility; drake )
+let UCSF_Hospital = Facility.firstWhere(.name == "UCSF Parnassus" )
+Record.byPatient(patient).where( .facility == UCSF_Hospital).forEach(
+  r => { Consent.create({ record: r, patient: patient, facility: drake }) }
 )
 
 // patient reviews the consent they just created
-Consent.byPatient(patientA)
+Consent.byPatient(Query.identity())
 
 // A drake researcher lists the records available to them 
+let drake = Facility.firstWhere( .name == "Drake Research" )
 let researcher = Researcher.firstWhere(.facility == drake)
 Credentials.byDocument(researcher).login("changeme")
 
 Record.all()
 
+// researcher accesses a record 
+
+AccessRecord(Record("402219589133402180"), Query.identity(), "Disclosure" )
+
+
+// switch to ADMIN
+Event.all()
