@@ -33,16 +33,6 @@ role Researcher {
   privileges Facility {
     read
   }
-
-  privileges Event { 
-    create { 
-      predicate (
-        event => { 
-          event.accessor == Query.identity()
-        }
-      )
-    }
-  }
   
   privileges AccessRecord { 
     call 

@@ -105,8 +105,7 @@ collection Consent {
   patient: Ref<Patient>
   facility: Ref<Facility>
 
-  unique [ .record, .facility ]
-  unique [ .patient, .facility ]
+  unique [ .record, .patient, .facility ]
 
   index byPatient {
     terms [.patient]
