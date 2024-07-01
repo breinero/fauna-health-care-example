@@ -51,7 +51,7 @@ role Practitioner {
 
     */
   }
-  
+
   privileges Patient {
     read
   }
@@ -66,5 +66,19 @@ role Practitioner {
 
   privileges Consent {
     read
+  }
+
+  privileges Event { 
+    create { 
+      predicate (
+        event => { 
+          event.accessor == Query.identity()
+        }
+      )
+    }
+  }
+  
+  privileges AccessRecord { 
+    call 
   }
 }

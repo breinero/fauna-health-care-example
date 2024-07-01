@@ -50,4 +50,14 @@ role Patient {
   privileges Facility {
     read
   }
+
+  privileges Event { 
+    read { 
+      predicate (
+        event => { 
+          event.patient == Query.identity()
+        }
+      )
+    }
+  }
 }
