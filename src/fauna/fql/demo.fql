@@ -36,10 +36,9 @@ Credentials.byDocument(researcher).login("changeme")
 
 Record.all()
 
-// researcher accesses a record 
+// researcher accesses Jean King's records
 
-AccessRecord(Record("402219589133402180"), Query.identity(), "Disclosure" )
-
+PatientRecords(Patient("402223095656482304"), "Disclosure")
 
 // switch to ADMIN
 Event.all()
