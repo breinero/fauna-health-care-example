@@ -111,6 +111,10 @@ collection Consent {
     terms [.patient]
   }
 
+  index byPatientAndFacility {
+    terms [.patient, .facility]
+  }
+
   index byRecordAndFacility {
     terms [.record, .facility]
   }

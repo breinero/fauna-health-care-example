@@ -3,12 +3,9 @@ role Patient {
 
   membership Patient 
 
-  privileges Record {
-    // may read thier own medical records but not alter them
-    read {
-      predicate (
-        (record) => { record.patient == Query.identity() }
-      )
+  privileges PatientRecords {
+    call {
+      predicate ((patient, type) => patient == Query.identity())
     }
   }
 
