@@ -11,6 +11,10 @@ collection Patient {
     country: String
   }
 
+  index byLastAndFirstName {
+     terms [ .name.last, .name.first ]
+  }
+
   history_days 0  
 }
 
@@ -26,11 +30,45 @@ collection Practitioner {
     postCode: Number | String | Null,
     country: String
   }
+  facility: Ref<Facility>
 
+  index byLastAndFirstName {
+     terms [ .name.last, .name.first ]
+  }
+  
   history_days 0
+
+  migrations {
+    add .facility
+  }
 }
 
-collection Insurer {
+collection Researcher {
+  name: {
+    last: String,
+    first: String
+  }
+  address: {
+    street: String,
+    city: String,
+    state_provence: String?,
+    postCode: Number | String | Null,
+    country: String
+  }
+  facility: Ref<Facility>
+
+  index byLastAndFirstName {
+     terms [ .name.last, .name.first ]
+  }
+
+  history_days 0
+
+  migrations {
+    add .facility
+  }
+}
+
+collection Facility {
   name: String
   address: {
     street: String,
@@ -45,7 +83,7 @@ collection Insurer {
 
 collection Record { 
   patient: Ref<Patient>
-  practitioner: Ref<Practitioner>
+  facility: Ref<Facility>
   name: String
   description: String
 
@@ -56,26 +94,37 @@ collection Record {
   }
 }
 
-collection Bill { 
+collection Event {
+  patient: Ref<Patient>
+  record: Ref<Record>
+  accessor: Ref<Researcher> | Ref<Practitioner>
+  type: "Export" | "Disclosure"
+  purpose: "Treatment" | "Research"
+
   history_days 0
 }
 
 collection Consent {
+  record: Ref<Record>
+  patient: Ref<Patient>
+  facility: Ref<Facility>
+
+  unique [ .record, .facility ]
+  unique [ .patient, .facility ]
+
+  index byPatient {
+    terms [.patient]
+  }
+
+  index byRecordAndFacility {
+    terms [.record, .facility]
+  }
+
   history_days 0
-
-  unique [ .record, .grantee ]
-  unique [ .type, .grantee ]
-  unique [ .type, .patient, .grantee ]
-
-  index byRecordAndGrantee {
-    terms [ .record, .grantee ]
-  }
-
-  index byTypeAndGrantee {
-    terms [ .type, .grantee ]
-  }
-
-  index byConsentTypePatientAndGrantee {
-    terms [ .type, .patient, .grantee ]
+ 
+  migrations { 
+    add .record
+    add .patient
+    add .facility
   }
 }

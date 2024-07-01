@@ -39,5 +39,5 @@ A small sample dataset is located in assets/demo_data. To load use the Fauna CLI
 
 From the terminal run
 ```
-fauna eval --file src/fauna/fql/seedData.fql
+fauna eval --file src/fauna/fql/sample_data/seedData.fql
 ```

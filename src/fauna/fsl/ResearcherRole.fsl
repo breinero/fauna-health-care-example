@@ -1,0 +1,36 @@
+role Researcher {
+
+  membership Researcher
+
+  privileges Record {
+    // an insurer can read medical records only if the patient has given
+    // consent for that particular record   
+    read {
+      predicate (
+        (record) => {
+          Consent.byRecordAndFacility(record, Query.identity()!.facility).first() != null
+        }
+      )
+    }
+  }
+
+  privileges Consent {
+    read {
+      predicate (
+        (consent) => { consent.facility == Query.identity()!.facility }
+      )
+    }
+  }
+
+  privileges Practitioner {
+    read
+  }
+
+  privileges Researcher {
+    read
+  }
+
+  privileges Facility {
+    read
+  }
+}

@@ -1,17 +1,26 @@
-Practitioner.create({ name: {last: 'Thompson', first: 'Steve'}, address: { street: '3675 Furth Circle', city: 'Burbank', state_provence: 'CA', postCode: 94019, country: 'USA'}});
-Practitioner.create({ name: {last: 'Moos', first: 'Hanna'}, address: { street: 'Forsterstr. 57', city: 'Mannheim', state_provence: null, postCode: 68306, country: 'Germany'}});
-Practitioner.create({ name: {last: 'Semenov', first: 'Alexander'}, address: { street: '2 Pobedy Square', city: 'Saint Petersburg', state_provence: null, postCode: 196143, country: 'Russia'}});
-Practitioner.create({ name: {last: 'Altagar', first: 'G M'}, address: { street: 'Raanan,3 Hagalim Blv.', city: 'Herzlia', state_provence: null, postCode: 47625, country: 'Israel'}});
-Practitioner.create({ name: {last: 'Roel', first: 'José Pedro'}, address: { street: 'C/ Romero, 33', city: 'Sevilla', state_provence: null, postCode: 41101, country: 'Spain'}});
-Practitioner.create({ name: {last: 'Salazar', first: 'Rosa'}, address: { street: '11328 Douglas Av.', city: 'Philadelphia', state_provence: 'PA', postCode: 71270, country: 'USA'}});
-Practitioner.create({ name: {last: 'Taylor', first: 'Sue'}, address: { street: '2793 Furth Circle', city: 'Brisbane', state_provence: 'CA', postCode: 94217, country: 'USA'}});
-Practitioner.create({ name: {last: 'Smith', first: 'Thomas'}, address: { street: '120 Hanover Sq.', city: 'London', state_provence: null, postCode: 'WA1 1DP', country: 'UK'}});
-Practitioner.create({ name: {last: 'Franco', first: 'Valarie'}, address: { street: '6251 Ingle Ln.', city: 'Boston', state_provence: 'MA', postCode: 51003, country: 'USA'}});
-Practitioner.create({ name: {last: 'Snowden', first: 'Tony'}, address: { street: 'Arenales 1938 3\'A\'', city: 'Auckland', state_provence: null, postCode: null, country: 'New Zealand'}});
+let UCSF = Facility.create({ name: 'UCSF Parnassus', address: { street: '400 Parnassus Ave.', city: 'San Francisco', state_provence: 'CA', postCode: 94143, country: 'USA'}});
+let SF_General = Facility.create({ name: 'San Francisco General Hospital', address: { street: '1001 Potrero Avenue', city: 'San Francisco', state_provence: 'CA', postCode: 94110, country: 'USA'}});
+let Mills = Facility.create({ name: 'Mills-Peninsula Medical Center', address: { street: '1501 Trousdale Drive', city: 'Burlingame', state_provence: 'CA', postCode: 94010, country: 'USA'}});
 
-Insurer.create({ name: 'Pincacle Health', address: { street: '3675 Furth Circle', city: 'Burbank', state_provence: 'CA', postCode: 94019, country: 'USA'}});
-Insurer.create({ name: 'Greenwood Heath', address: { street: 'Forsterstr. 57', city: 'Mannheim', state_provence: null, postCode: 68306, country: 'Germany'}});
-Insurer.create({ name: 'Thrive Life', address: { street: '2793 Furth Circle', city: 'Brisbane', state_provence: 'CA', postCode: 94217, country: 'USA'}});
+let UCSF_Research = Facility.create({ name: 'UCSF Research', address: { street: '400 Parnassus Ave.', city: 'San Francisco', state_provence: 'CA', postCode: 94143, country: 'USA'}});
+let Drake = Facility.create({ name: 'Drake Research', address: { street: 'Hansastr. 15', city: 'Munich', state_provence: null, postCode: 80686, country: 'Germany' }});
+
+Practitioner.create({ name: {last: 'Thompson', first: 'Steve'}, address: { street: '3675 Furth Circle', city: 'Burbank', state_provence: 'CA', postCode: 94019, country: 'USA'}, facility: UCSF});
+Practitioner.create({ name: {last: 'Moos', first: 'Hanna'}, address: { street: 'Forsterstr. 57', city: 'Mannheim', state_provence: null, postCode: 68306, country: 'Germany'}, facility: UCSF});
+Practitioner.create({ name: {last: 'Semenov', first: 'Alexander'}, address: { street: '2 Pobedy Square', city: 'Saint Petersburg', state_provence: null, postCode: 196143, country: 'Russia'}, facility: UCSF});
+Practitioner.create({ name: {last: 'Altagar', first: 'G M'}, address: { street: 'Raanan,3 Hagalim Blv.', city: 'Herzlia', state_provence: null, postCode: 47625, country: 'Israel'}, facility: SF_General});
+Practitioner.create({ name: {last: 'Roel', first: 'José Pedro'}, address: { street: 'C/ Romero, 33', city: 'Sevilla', state_provence: null, postCode: 41101, country: 'Spain'}, facility: SF_General});
+Practitioner.create({ name: {last: 'Salazar', first: 'Rosa'}, address: { street: '11328 Douglas Av.', city: 'Philadelphia', state_provence: 'PA', postCode: 71270, country: 'USA'}, facility: UCSF});
+Practitioner.create({ name: {last: 'Taylor', first: 'Sue'}, address: { street: '2793 Furth Circle', city: 'Brisbane', state_provence: 'CA', postCode: 94217, country: 'USA'}, facility: SF_General});
+Practitioner.create({ name: {last: 'Smith', first: 'Thomas'}, address: { street: '120 Hanover Sq.', city: 'London', state_provence: null, postCode: 'WA1 1DP', country: 'UK'}, facility: UCSF});
+Practitioner.create({ name: {last: 'Franco', first: 'Valarie'}, address: { street: '6251 Ingle Ln.', city: 'Boston', state_provence: 'MA', postCode: 51003, country: 'USA'}, facility: Mills});
+Practitioner.create({ name: {last: 'Snowden', first: 'Tony'}, address: { street: 'Arenales 1938 3\'A\'', city: 'Auckland', state_provence: null, postCode: null, country: 'New Zealand'}, facility: Mills});
+
+Researcher.create({ name: {last: 'Salazar', first: 'Rosa'}, address: { street: '11328 Douglas Av.', city: 'Philadelphia', state_provence: 'PA', postCode: 71270, country: 'USA'}, facility: UCSF_Research});
+Researcher.create({ name: {last: 'Taylor', first: 'Sue'}, address: { street: '2793 Furth Circle', city: 'Brisbane', state_provence: 'CA', postCode: 94217, country: 'USA'}, facility: UCSF_Research});
+Researcher.create({ name: {last: 'Smith', first: 'Thomas'}, address: { street: '120 Hanover Sq.', city: 'London', state_provence: null, postCode: 'WA1 1DP', country: 'UK'}, facility: UCSF_Research});
+Researcher.create({ name: {last: 'Franco', first: 'Valarie'}, address: { street: '6251 Ingle Ln.', city: 'Boston', state_provence: 'MA', postCode: 51003, country: 'USA'}, facility: Drake});
+Researcher.create({ name: {last: 'Snowden', first: 'Tony'}, address: { street: 'Arenales 1938 3\'A\'', city: 'Auckland', state_provence: null, postCode: null, country: 'New Zealand'}, facility: Drake});
 
 Patient.create({ name: {last: 'Schmitt', first: 'Carine'}, address:{ street: "54, rue Royale", city: 'Nantes', state_provence: 'unknown', postCode: 44000, country: 'France'}});
 Patient.create({ name: {last: 'King', first: 'Jean'}, address: { street: '8489 Strong St.', city: 'Las Vegas', state_provence:'NV', postCode: 83030, country: 'USA' } });
@@ -20,6 +29,7 @@ Patient.create({ name: {last: 'Labrune', first: 'Janine'}, address: { street: '6
 Patient.create({ name: {last: 'Bergulfsen', first: 'Jonas'}, address: { street: 'Erling Skakkes gate 78', city: 'Stavern', state_provence: null, postCode: 4110, country: 'Norway' } });
 Patient.create({ name: {last: 'Nelson', first: 'Susan'}, address: { street: '5677 Strong St.', city: 'San Rafael', state_provence:'CA', postCode: 97562, country: 'USA' } });
 Patient.create({ name: {last: 'Piestrzeniewicz', first: 'Zbyszek'}, address: { street: 'ul. Filtrowa 68', city: 'Warszawa', state_provence:null, postCode: '01-012', country: 'Poland' } });
+/*
 Patient.create({ name: {last: 'Keitel', first: 'Roland'}, address: { street: 'Lyonerstr. 34', city: 'Frankfurt', state_provence:null, postCode: 60528, country: 'Germany' } });
 Patient.create({ name: {last: 'Murphy', first: 'Julie'}, address: { street: '5557 North Pendale Street', city: 'San Francisco', state_provence:'CA', postCode: 94217, country: 'USA' } });
 Patient.create({ name: {last: 'Lee', first: 'Kwai'}, address: { street: '897 Long Airport Avenue', city: 'NYC', state_provence:'NY', postCode: 10022, country: 'USA' } });
@@ -135,3 +145,4 @@ Patient.create({ name: {last: 'Taylor', first: 'Sue'}, address: { street: '2793 
 Patient.create({ name: {last: 'Smith', first: 'Thomas'}, address: { street: '120 Hanover Sq.', city: 'London', state_provence: null, postCode: 'WA1 1DP', country: 'UK'}});
 Patient.create({ name: {last: 'Franco', first: 'Valarie'}, address: { street: '6251 Ingle Ln.', city: 'Boston', state_provence: 'MA', postCode: 51003, country: 'USA'}});
 Patient.create({ name: {last: 'Snowden', first: 'Tony'}, address: { street: 'Arenales 1938 3\'A\'', city: 'Auckland', state_provence: null, postCode: null, country: 'New Zealand'}});
+*/

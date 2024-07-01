@@ -1,0 +1,22 @@
+function AccessRecord (
+  record: Record, 
+  accessor: Researcher | Practitioner, 
+  type: "Disclosure" | "Export", 
+): Record | Null {
+
+  let purpose = if (accessor isa Practitioner) {
+    "Treatment"
+  } else {
+    "Research"
+  }
+
+  Event.create({
+    patient: record!.patient,
+    record: record,
+    accessor: accessor,
+    type: type,
+    purpose: purpose
+  })
+
+  record
+}

@@ -4,13 +4,23 @@ role Practitioner {
 
   privileges Record {
     
+    create 
+    read 
+    write 
+    delete
+
+    /*
     // A practitioner may create, update, or delete medical records
     // but only for a patient that has consented for them to do so
     create {
-      // A provider can only create records for a current patient
+      // A provider can only create records for a patient who has consented to treatment 
       predicate (
         (record) => {
-          Consent.byConsentTypePatientAndGrantee('current_provider', record.patient, Query.identity()).first() != null
+          let consent = Consent.byRecordAndFacility(
+            record.patient,
+            Query.identity()!.facility
+          ).first()
+          ( consent != null && consent!.record!.name == "Informed Concent")
         }
       )
     }
@@ -18,63 +28,43 @@ role Practitioner {
     read {
       predicate (
         (record) => {
-          Consent.byRecordAndGrantee(record, Query.identity()).first() != null
+          Consent.byRecordAndFacility(record, Query.identity()!.facility).first() != null
         }
       )
     }
     write {
       predicate (
         (oldData, newData, record) => {
-          Consent.byRecordAndGrantee(record, Query.identity()).first() != null 
+          Consent.byRecordAndFacility(record, Query.identity()!.facility).first() != null 
         }
+     
       )
     }
 
     delete {
       predicate (
         (record) => {
-          Consent.byRecordAndGrantee(record, Query.identity()).first() != null 
+          Consent.byRecordAndFacility(record, Query.identity()!.facility).first() != null 
         }
       )
     }
+
+    */
+  }
+  
+  privileges Patient {
+    read
   }
 
-  privileges Bill {
-     
-    // a privider may create a bill for patients they are the current_provider
-    create {
-      predicate (
-        (bill) => {
-          Consent.byConsentTypePatientAndGrantee('current_provider', bill.patient, Query.identity()).first() != null
-        }
-      )
-    }
-    
-    // a practitioner can read the bills they've created
-    read {
-      predicate (
-        (bill) => {
-          bill.practitioner == Query.identity()
-        }
-      )
-    }
+  privileges Practitioner {
+    read
+  }
 
-    // a practitioner can write the bills they've created
-    write {
-      predicate (
-        (oldData, newData, bill) => {
-          bill.practitioner == Query.identity()
-        }
-      )
-    }
+  privileges Researcher {
+    read
+  }
 
-    // a practitioner can delete the bills they've created
-    delete {
-      predicate (
-        (bill) => {
-          bill.practitioner == Query.identity()
-        }
-      )
-    }
+  privileges Consent {
+    read
   }
 }

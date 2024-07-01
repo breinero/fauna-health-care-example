@@ -12,44 +12,42 @@ role Patient {
     }
   }
 
-  privileges Bill {
-    // may read thier own bills but not alter them
-    read {
-      predicate (
-        (record) => { record.patient == Query.identity() }
-      )
-    }
-  }
-
   privileges Consent {
     
-    // A patient may create, update, or delete a consent
+    // A patient may only create or delete thier own consents
     create {
       predicate (
-        (record) => { record.patient == Query.identity() }
+        (consent) => { 
+          consent.record.patient == Query.identity() 
+          && consent.patient == Query.identity()
+        }
       )
     }
 
     read {
       predicate (
-        (record) => { record.patient == Query.identity() }
-      )
-    }
-
-    write {
-      predicate (
-        (oldData, newData, record) => {
-          record.patient == Query.identity()  
-        }
+        (consent) => { consent.patient == Query.identity() }
       )
     }
 
     delete {
       predicate (
-        (record) => {
-          record.patient == Query.identity()  
+        (consent) => {
+          consent.patient == Query.identity()  
         }
       ) 
     }
+  }
+
+  privileges Practitioner {
+    read
+  }
+
+  privileges Researcher {
+    read
+  }
+
+  privileges Facility {
+    read
   }
 }
