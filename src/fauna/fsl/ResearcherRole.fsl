@@ -1,6 +1,8 @@
 role Researcher {
 
-  membership Researcher
+  membership Researcher {
+    predicate (practitioner => practitioner.badgedIn)
+  }
 
   privileges PatientRecords {
     call {

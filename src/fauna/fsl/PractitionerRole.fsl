@@ -1,6 +1,8 @@
 role Practitioner {
   
-  membership Practitioner 
+  membership Practitioner {
+    predicate (practitioner => practitioner.badgedIn)
+  }
 
   privileges Record {
     
