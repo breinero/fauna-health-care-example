@@ -1,4 +1,3 @@
-
 role Patient {
 
   membership Patient 
@@ -7,34 +6,28 @@ role Patient {
     // may read thier own medical records but not alter them
     read {
       predicate (
-        (record) => { record.patient == Query.identity() }
+        (record) => record.patient == Query.identity()
       )
     }
   }
 
   privileges Consent {
-    
-    // A patient may only create or delete thier own consents
+    // A patient may only read, create, or delete thier own consents
     create {
       predicate (
-        (consent) => { 
-          consent.record.patient == Query.identity() 
-          && consent.patient == Query.identity()
-        }
+        (consent) => consent.patient == Query.identity()
       )
     }
 
     read {
       predicate (
-        (consent) => { consent.patient == Query.identity() }
+        (consent) => consent.patient == Query.identity()
       )
     }
 
     delete {
       predicate (
-        (consent) => {
-          consent.patient == Query.identity()  
-        }
+        (consent) => consent.patient == Query.identity()
       ) 
     }
   }

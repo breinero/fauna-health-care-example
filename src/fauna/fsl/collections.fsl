@@ -91,29 +91,31 @@ collection Record {
 }
 
 collection Event {
-  patient: Ref<Patient>
   record: Ref<Record>
   accessor: Ref<Researcher> | Ref<Practitioner>
   type: "Export" | "Disclosure"
   purpose: "Treatment" | "Research"
 
   history_days 0
+
+  migrations {
+    drop .patient
+  }
 }
 
 collection Consent {
-  record: Ref<Record>
   patient: Ref<Patient>
   facility: Ref<Facility>
+  purpose: "Treatment" | "Research" = "Treatment"
 
-  unique [ .record, .facility ]
-  unique [ .patient, .facility ]
+  unique [ .patient, .facility, .purpose ]
 
   index byPatient {
     terms [.patient]
   }
 
-  index byRecordAndFacility {
-    terms [.record, .facility]
+  index byPatientAndFacility {
+    terms [.patient, .facility]
   }
 
   history_days 0
@@ -122,5 +124,7 @@ collection Consent {
     add .record
     add .patient
     add .facility
+    add .purpose
+    drop .record
   }
 }

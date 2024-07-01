@@ -8,7 +8,10 @@ role Researcher {
     read {
       predicate (
         (record) => {
-          Consent.byRecordAndFacility(record, Query.identity()!.facility).first() != null
+          Consent.byPatientAndFacility(
+            record.patient,
+            Query.identity()!.facility
+          ).nonEmpty()
         }
       )
     }
