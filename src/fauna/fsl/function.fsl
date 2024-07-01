@@ -31,6 +31,7 @@ function PatientRecords(
   }
 }
 
+@role(server)
 function AccessRecord (
   record: Record, 
   accessor: Researcher | Practitioner, 

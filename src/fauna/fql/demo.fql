@@ -1,0 +1,35 @@
+let patientA = Patient.byLastAndFirstName( "King", "Jean").first()
+let UCSF_Hospital = Facility.firstWhere(.name == "UCSF Parnassus" )
+let SF_General  = Facility.firstWhere(.name == "San Francisco General Hospital" )
+
+let UCSF_Pracitioner = Practitioner.firstWhere(  .facility == UCSF_Hospital )
+let SF_General_Practioner = Practitioner.firstWhere(  .facility == SF_General )
+
+Record.create({patient: patientA, facility: UCSF_Hospital, practitioner: UCSF_Pracitioner, name: "MRI", description: "examine left knee"})
+Record.create({patient: patientA, facility: UCSF_Hospital, practitioner: UCSF_Pracitioner, name: "Metabolic Panel", description: "Full blood examination"})
+Record.create({patient: patientA, facility: UCSF_Hospital, practitioner: UCSF_Pracitioner, name: "Immunoglobulin E", description: "Allgery test"})
+
+Record.create({patient: patientA, facility: SF_General, practitioner: SF_General_Practioner, name: "X_ray", description: "examine wrist, emergency visit"})
+Record.create({patient: patientA, facility: SF_General, practitioner: SF_General_Practioner, name: "Prescription", description: "15 day naproxen prescription" })
+
+Record.byPatient(patientA)
+
+// Patient 
+let jean_king = Patient.byLastAndFirstName( "King", "Jean").first()
+Credentials.byDocument(jean_king).login("changeme")
+
+// Patient adds consent for records to Drake Research
+let drake = Facility.firstWhere( .name == "Drake Research" )
+Record.byPatient(patientA).forEach(
+  r => { Consent.create({ record: r, patient: patientA, facility; drake )
+)
+
+// patient reviews the consent they just created
+Consent.byPatient(patientA)
+
+// A drake researcher lists the records available to them 
+let researcher = Researcher.firstWhere(.facility == drake)
+Credentials.byDocument(researcher).login("changeme")
+
+Record.all()
+

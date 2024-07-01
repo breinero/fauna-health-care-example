@@ -80,6 +80,7 @@ collection Facility {
 collection Record { 
   patient: Ref<Patient>
   facility: Ref<Facility>
+  practitioner: Ref<Practitioner>
   name: String
   description: String
 
@@ -87,6 +88,11 @@ collection Record {
 
   index byPatient { 
     terms [ .patient ] 
+  }
+
+  migrations {
+    add .practitioner
+    backfill .practitioner = Practitioner("402176652907380801")
   }
 }
 
