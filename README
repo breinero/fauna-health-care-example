@@ -1,43 +1,56 @@
-This health care example application has the following three main components
 
-* Data Model
+# Overview 
+Hospitals frequenty use software in medical devices, which displays patient information. This information must be accessible to properly authorized actors, as well as provide audits of who accessed what data, and when they accessed it.  Hospitals and other stakeholders need to be  able to query this audit data for a given patient, or by record, or by time of access. 
+
+In addition, patient may consent to sharing thier patient records can be made accessible to researchers conducting studies on the efficiency of the applied treatment. However access to patient data can only be made accessible to researchers with the consent of the patient. In the case that either a clinician or researcher accesses patient data collected during a hospital visit, Hospitals use Audit Record Repositories (ARR) to receive event audit reports and store them.
+
+This example demonstrates how to store records, enable access to patient records via explicit concent, and audit that accees is an Audit Record Repository. 
+
+# Requirements
+## Access and Consent Requirements
+### Consenting to Access
+- A patient may consent to access by Facility.
+-- I.E. when a patient is admitted to a hospital facility, the patient must grant that facility consent to create, review, and modify medical records on their behalf
+- When patient has granted consent to a facility, every practitioner or researcher in that facility has access to that __ -- patient's records
+### Access to Records
+-- A practitioner or researcher may create, modify, search for, or access records for which they the patient has granted consent
+-- A patient may search for, or access their own records. They may not modify or delete them
+## Auditing
+- Any access of a record is logged as an Event
+- Events are of type “Export” or “Disclosure" 
+-- A disclosure event occurs when any  portion of a record is listed in a record search, or viewed in its entirety
+-- A export event occurs when the record is downloaded out of the ARR
+- Each event is logged with the purpose why it was accessed. 
+-- When a practitioner accesses a record the purpose is recorded as “Treatment”
+-- When a researcher accesses a record the purpose is recorded as “Research”
+- A patient can search for access events to the patient's own records	
+-- The patient can search for audit events by time, purpose, or facility
+- Administrators of a Facility can search for and access any Audit Event that belongs to an Record created at their Facility
+
+# Data Model
 This application's data model is fully described in fauna schema language files, located in the path `./src/fauna/fsl`
 
-** EHR (electronic health record)
+## EHR (electronic health record)
 A document that describes a procedure applied to a Patient, by a Practitioner
 
-** Patient 
+## Patient 
 A patient in the system for whom EHRs are created
 
-** Practitioner
+## Practitioner
 A doctor, for example, who administered an examination, treatment, or procedure as recorded in an EHR 
 
-** Insurer
+## Insurer
 A health management organization who handles bills
 
-** Consent
+## Consent
 Document, created by a Patient to give either a Practitioner or Insurer access to a specific EHR
 
-
-* Requirements
-- Patients may grant or revoke access to EHRs on demand
--- Patients may only control access to an EHR where they are the Patient
--- Patients can control access per EHR, per Practitioner or Insurer 
--- Patient can read all records where they are the patient
---- Patients can't modify EHRs
-
-- Practitioners
--- May only access EHRs when the Patient has granted access 
--- Practitioners may only create EHRs for patients they have current practitioner status
--- A practitioner can CRUD records of type procedure or bill 
-
-- Insurer 
--- can read any records
-
-Demo Dataset 
+# Demo Dataset 
 A small sample dataset is located in assets/demo_data. To load use the Fauna CLI to load this data set 
 
 From the terminal run
 ```
 fauna eval --file src/fauna/fql/sample_data/seedData.fql
 ```
+
+There is also a script you can follow to get an understanding of the workflow. This script is located at src/fauna/fql/demo.fql
