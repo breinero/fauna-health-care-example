@@ -1,3 +1,36 @@
+@role(server)
+function PatientRecords(
+  patient: Patient,
+  type: "Disclosure" | "Export"
+): Array<{
+  patient: { name: String },
+  facility: { name: String },
+  name: String,
+  description: String
+}> {
+  let user = Query.identity()!
+
+  let records = if (user isa Patient) {
+    Record
+      .byPatient(patient)
+      .toArray()
+  } else {
+    Consent
+      .byPatientAndFacility(patient, user.facility)
+      .toArray()
+      .map(consent => {
+        let record = consent.record
+        AccessRecord(record, user, type)
+      })
+  }
+
+  records {
+    patient { name },
+    facility { name },
+    name, description
+  }
+}
+
 function AccessRecord (
   record: Record, 
   accessor: Researcher | Practitioner, 
