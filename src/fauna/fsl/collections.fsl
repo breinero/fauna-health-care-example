@@ -37,10 +37,6 @@ collection Practitioner {
   }
   
   history_days 0
-
-  migrations {
-    add .facility
-  }
 }
 
 collection Researcher {
